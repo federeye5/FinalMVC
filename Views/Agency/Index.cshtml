@@ -51,11 +51,11 @@
       </tbody>
     </table>
   </div>
-
-  @if (User.IsInRole("admin") || User.IsInRole("broker"))
-  {
-    <div>
+<div>
       <a class="btn btn-success" asp-action="Create">Crear nueva agencia</a>
     </div>
-  }
+  @* @if (User.IsInRole("admin") || User.IsInRole("broker"))
+  {
+    
+  } *@
 </div>
