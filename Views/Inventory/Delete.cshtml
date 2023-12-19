@@ -1,0 +1,18 @@
+@model Final.Models.Inventory
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar producto</h1>
+
+<h3>Estas seguro que deseas eliminar este producto?</h3>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <span>Producto: @Model.Moto.Brand @Model.Moto.Model</span>
+        <br>
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-controller="Agency" asp-action="Details" asp-route-id="@Model?.AgencyId" class="btn btn-primary">Volver al listado</a>
+    </form>
+</div>

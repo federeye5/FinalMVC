@@ -1,0 +1,54 @@
+@model Final.Models.Moto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title text-center">Detalle</h1>
+    </div>
+    <div class="card-body">
+      <dl class="row">
+        <dt class="col-sm-3">Marca:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Brand)</dd>
+
+        <dt class="col-sm-3">Modelo:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Model)</dd>
+
+        <dt class="col-sm-3">Cilindrada:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CubicCentimeters)</dd>
+
+        <dt class="col-sm-3">Tipo:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Type)</dd>
+
+        <dt class="col-sm-3">Precio:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Price)</dd>
+
+        <dt class="col-sm-3">Accesorios:</dt>
+        <dd class="col-sm-9">
+          <ul class="list-group">
+            @if (Model.Accesories != null && Model.Accesories.Count() > 0)
+            {
+              @foreach (var item in Model.Accesories)
+              {
+                <li class="list-group-item">@item.Name</li>
+              }
+            }
+            else
+            {
+              <li class="list-group-item">No existen accesorios para esta moto</li>
+            }
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <div class="card-footer text-center">
+      <a class="btn btn-primary" asp-action="Index">Volver</a>
+    </div>
+  </div>
+</div>
+
+
+
